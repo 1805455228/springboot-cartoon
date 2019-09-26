@@ -6,7 +6,7 @@ server:
 
 spring:
   application:
-    name: fujica-shelter  # 项目名称
+    name: cartoon  # 项目名称
   profiles:
     active: dev         # 开发环境
   jackson:
@@ -19,7 +19,7 @@ spring:
       max-file-size: 10MB
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
       naming:
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
     show-sql: true
@@ -28,7 +28,7 @@ spring:
 jwt:
   tokenHeader: Authorization   #请求头
   secret: w-eyJleHAiOjE1NDMyMDUyODUsInN1YiI6ImFkbWluIiwiY3JlYXRlZCI6MTU0MDYxMzI4N  #加密的字符串
-  expiration: 1200000    #毫秒，这里默认20分钟
+  expiration: 1200000   #毫秒，这里默认20分钟
   tokenHead: "Bearer "
   exceptUrl: "/auth/**"
   route:

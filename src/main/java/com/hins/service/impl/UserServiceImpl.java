@@ -179,7 +179,7 @@ public class UserServiceImpl extends BaseServiceImpl<User, String, UserRepositor
         }
         String rawPassword = user.getPassword();
         user.setPassword(passwordEncoder.encode(rawPassword));
-        user.setUpTime(new Date());
+        user.setUpdateTime(new Date());
         user.setCreateTime(new Date());
         return baseRepository.save(user);
     }
@@ -223,7 +223,7 @@ public class UserServiceImpl extends BaseServiceImpl<User, String, UserRepositor
                     user.getAvatar(), user.getNickname(),
                     user.getAccount(), user.getMail(), user.getGender(),
                     user.getBirthday(), user.getState(), dept, roles,
-                    user.getCreateTime(), user.getUpTime()
+                    user.getCreateTime(), user.getUpdateTime()
             );
             userVos.add(userVo);
         });

@@ -58,7 +58,8 @@ public class BaseServiceImpl<T extends BaseEntity, ID, R extends JpaRepository> 
             throw new JpaCrudException("You cannot save an empty entity class.");
         }
         entity.setCreateTime(new Date());
-        entity.setUpTime(new Date());
+        entity.setUpdateTime(new Date());
+        entity.setVersion(1);
         log.info("save: {}", entity);
         return (T) baseRepository.saveAndFlush(entity);
     }
@@ -69,7 +70,8 @@ public class BaseServiceImpl<T extends BaseEntity, ID, R extends JpaRepository> 
         if (entity == null) {
             throw new JpaCrudException("You cannot update an empty entity class.");
         }
-        entity.setUpTime(new Date());
+        entity.setUpdateTime(new Date());
+        entity.setVersion(1);
         log.info("update: {}", entity);
         return (T) baseRepository.saveAndFlush(entity);
     }

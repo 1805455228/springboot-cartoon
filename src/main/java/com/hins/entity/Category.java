@@ -7,6 +7,9 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+ * 目录
+ */
 @Entity
 @Table(name = "tb_category")
 @Data

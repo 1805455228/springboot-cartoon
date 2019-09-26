@@ -23,10 +23,13 @@ import java.util.Date;
 @ToString
 public class BaseEntity implements Serializable {
 
-    @Column(name = "t_create_time")
+    @Column(name = "update_time")
+    private Date updateTime;
+
+    @Column(name = "create_time")
     private Date createTime;
 
-    @Column(name = "t_up_time")
-    private Date upTime;
+    @Column(name = "version")
+    private long version;
 
 }
